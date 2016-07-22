@@ -18,6 +18,7 @@
 
   "files": [
     "main.ts",
+    "app/shared/pokemon.service.ts",
     "typings.d.ts"
   ]
 }

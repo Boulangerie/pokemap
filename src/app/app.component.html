@@ -1,3 +1,19 @@
-<h1>
-  {{title}}
-</h1>
+<div *ngIf="lat">
+  <sebm-google-map
+        [latitude]="lat"
+        [longitude]="lng"
+        [zoom]="zoom"
+        [disableDefaultUI]="false"
+        [zoomControl]="false"
+        (mapClick)="mapClicked($event)">
+
+    <sebm-google-map-marker
+        *ngFor="let pokemon of pokemons"
+        [latitude]="pokemon.lat"
+        [longitude]="pokemon.lng"
+        [label]="pokemon.label"
+        [markerDraggable]="pokemon.draggable">
+    </sebm-google-map-marker>
+    
+  </sebm-google-map>
+</div>
